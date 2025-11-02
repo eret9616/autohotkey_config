@@ -3,11 +3,15 @@
 #NoTrayIcon
 
 ; 四指轻敲触发的快捷键（Ctrl+Alt+F12） 窗口最大化/缩放
-^!F12::
-{
+^!F12:: {
     winState := WinGetMinMax("A")
     if (winState = 1)
         WinRestore("A")
     else
         WinMaximize("A")
+}
+
+; Ctrl + Alt + D 一键最小化当前窗口
+^!d:: {
+    WinMinimize("A")
 }
